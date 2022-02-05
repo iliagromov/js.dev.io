@@ -1,4 +1,4 @@
-import { mathOp } from './math';
+
 
 /*
 Дополнительный интерфейс для выхова таймаута
@@ -88,14 +88,14 @@ function userReg() {
             else {
                 reject({ msg: "error in registration" });
             }
-        }, 500);
+        });
     });
 
 }
 
 function userAuth(id) {
     return new Promise(function (resolve, reject) {
-        window.setTimeout(function () {
+        TimeoutPromise(500).then(()=>{
             if (Math.random() > 0.2) {
                 resolve({
                     msg: "+ auth " + id,
@@ -105,13 +105,13 @@ function userAuth(id) {
             else {
                 reject({ msg: "error in auth" });
             }
-        }, 500);
+        });
     });
 }
 
 function userData(token) {
     return new Promise(function (resolve, reject) {
-        window.setTimeout(function () {
+        TimeoutPromise(500).then(() =>{
             if (Math.random() > 0.2) {
                 resolve({
                     msg: "+ data by token " + token,
@@ -124,7 +124,7 @@ function userData(token) {
             else {
                 reject({ msg: "error in data" });
             }
-        }, 500);
+        });
     });
 }
 

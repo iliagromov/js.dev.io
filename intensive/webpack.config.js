@@ -9,7 +9,14 @@ let conf = {
         publicPath: 'js/'
     },
     devServer: {
-        overlay: true
+        overlay: true,
+        proxy: {
+            '/js-frontend-api/**': {
+                target: 'http://js.dev.io/',
+                secure: false,
+                changeOrigin: true
+            }
+        }
     },
     module: {
         rules: [

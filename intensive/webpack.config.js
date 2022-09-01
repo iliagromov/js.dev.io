@@ -10,9 +10,20 @@ let conf = {
     },
     devServer: {
         overlay: true,
+        // proxy: {
+        //     '/test_main/**': {
+        //         //target: 'http://js.dev.io/',
+        //         // target: "http://faceprog.ru/",
+        //         target: "http://makefriendsback.promo-miner.art/",
+        //         secure: false,
+        //         changeOrigin: true
+        //     }
+        // }
         proxy: {
             '/js-frontend-api/**': {
-                target: 'http://js.dev.io/',
+                //target: 'http://js.dev.io/',
+                // target: "http://faceprog.ru/",
+                target: "http://faceprog.ru",
                 secure: false,
                 changeOrigin: true
             }
